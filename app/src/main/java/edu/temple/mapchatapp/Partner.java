@@ -3,8 +3,6 @@ package edu.temple.mapchatapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Comparator;
-
 public class Partner implements Comparable, Parcelable {
 
     int mData;
@@ -18,6 +16,10 @@ public class Partner implements Comparable, Parcelable {
         this.lat = lat;
         this.lon = lon;
         this.distance = distance;
+    }
+
+    public double getDistance() {
+        return this.distance;
     }
 
     //comparable interface
@@ -34,24 +36,19 @@ public class Partner implements Comparable, Parcelable {
         this.lat = in.readDouble();
         this.lon = in.readDouble();
     }
-
     public static final Parcelable.Creator<Partner> CREATOR
             = new Parcelable.Creator<Partner>() {
         public Partner createFromParcel(Parcel in) { return new Partner(in); }
         public Partner[] newArray(int size) { return new Partner[size]; }
     };
-
-    public double getDistance() {
-        return this.distance;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(mData);
     }
-
     @Override
     public int describeContents() {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(mData);
-    }
+
 }

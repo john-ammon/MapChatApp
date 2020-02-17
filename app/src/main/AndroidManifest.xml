@@ -3,6 +3,7 @@
     package="edu.temple.mapchatapp">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -14,6 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:configChanges="orientation|screenSize">
+
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBjV8qsxy-C2CyN8NvqnrOooirnxpqoBAc"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

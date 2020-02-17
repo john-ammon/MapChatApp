@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity implements PartnerListFragme
         fragmentManager = getSupportFragmentManager();
         preferences = getApplicationContext().getSharedPreferences("MyPrefs", 0);
         editor = preferences.edit();
-        
+
         //display fragments
         getPartners();
         fragmentManager
                 .beginTransaction()
                 .addToBackStack(null)
                 .replace(R.id.listFragment, plf.newInstance(partners))
-                .replace(R.id.mapFragment, mf.newInstance())
+                .replace(R.id.mapFragment, mf.newInstance(partners))
                 .commit();
 
         //update fragments every 30 seconds
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements PartnerListFragme
                 fragmentManager
                         .beginTransaction()
                         .replace(R.id.listFragment, plf.newInstance(partners))
-                        .replace(R.id.mapFragment, mf.newInstance())
+                        .replace(R.id.mapFragment, mf.newInstance(partners))
                         .commitAllowingStateLoss();
                 handler.postDelayed(this, 30000);
             }
