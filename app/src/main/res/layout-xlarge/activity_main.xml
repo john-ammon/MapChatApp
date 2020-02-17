@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="102dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/usernameText"
+                android:layout_width="206dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="22dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/username" />
+
+            <Button
+                android:id="@+id/usernameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/username_button" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/listFragment"
+            android:layout_width="315dp"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</LinearLayout>

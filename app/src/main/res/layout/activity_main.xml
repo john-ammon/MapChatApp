@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/usernameText"
+            android:layout_width="229dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/username" />
+
+        <Button
+            android:id="@+id/usernameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="28dp"
+            android:text="@string/username_button" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/listFragment"
+        android:layout_width="405dp"
+        android:layout_height="332dp"
+        android:layout_marginTop="10dp">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/mapFragment"
+        android:layout_width="410dp"
+        android:layout_height="333dp">
+
+    </FrameLayout>
+</LinearLayout>
