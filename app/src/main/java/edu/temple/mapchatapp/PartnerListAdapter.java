@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,14 @@ public class PartnerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     Context context;
     ArrayList<Partner> partners;
+    private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            TextView name = view.findViewById(R.id.partnerName);
+            String s = String.valueOf(name.getText());
+            
+        }
+    };
 
     public PartnerListAdapter(Context context, ArrayList<Partner> partners) {
         this.context = context;
@@ -25,6 +34,7 @@ public class PartnerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View row = layoutInflater.inflate(R.layout.partner_item, parent, false);
+        row.setOnClickListener(mOnClickListener);
         partner p = new partner(row);
         return p;
     }

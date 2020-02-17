@@ -17,6 +17,8 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
@@ -126,7 +128,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         gMap = googleMap;
+
+        for(Partner p : partners) {
+            LatLng temp = new LatLng(p.lat, p.lon);
+            gMap.addMarker(new MarkerOptions()
+                    .position(temp)
+                    .title(p.user));
+        }
     }
 
 }

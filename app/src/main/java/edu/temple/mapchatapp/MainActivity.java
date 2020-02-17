@@ -68,15 +68,6 @@ public class MainActivity extends AppCompatActivity implements PartnerListFragme
         preferences = getApplicationContext().getSharedPreferences("MyPrefs", 0);
         editor = preferences.edit();
 
-        //display fragments
-        getPartners();
-        fragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(R.id.listFragment, plf.newInstance(partners))
-                .replace(R.id.mapFragment, mf.newInstance(partners))
-                .commit();
-
         //update fragments every 30 seconds
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -152,8 +143,6 @@ public class MainActivity extends AppCompatActivity implements PartnerListFragme
         } else {
             showLocationUpdates();
         }
-
-        postLocation();
     }
 
     private void showLocationUpdates() {
